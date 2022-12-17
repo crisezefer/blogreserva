@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('crear_post/', crearPost, name='crear_post'),
     path('posteos/', (MostrarPost.as_view()), name='posteos'),
+    re_path('leer_post/(?P<id>\d+)/$', leerPost, name='posteo'),
 
 ]

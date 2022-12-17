@@ -43,3 +43,12 @@ class MostrarPost(View):
         }
         return render (request, self.template_name, context)
 # Create your views here
+
+def leerPost(request, id):
+    if request.method=='GET':
+        post = Post.objects.get(id=id)
+        context = {
+            'post': post
+        }
+
+    return render(request, 'post/posteo.html', context)

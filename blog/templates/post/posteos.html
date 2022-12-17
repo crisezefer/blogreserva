@@ -27,7 +27,7 @@
             <div class="card-body">
                 <h5 class="card-title mb-2 fw-mediumbold">{{post.titulo}}</h5>
                 <p class="card-text">{{post.resumen}}</p>
-                <a href="#" class="btn btn warning">Leer Post</a>
+                <a href="{% url 'posteo' post.id %}" class="btn btn warning">Leer Post</a>
             </div>
         </div>
     {% endfor %}
