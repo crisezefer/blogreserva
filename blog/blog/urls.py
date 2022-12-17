@@ -19,6 +19,7 @@ from apps.post.views import *
 
 
 urlpatterns = [
+    path('', userlogin, name='login'),
     path('admin/', admin.site.urls),
     path('crear_post/', crearPost, name='crear_post'),
     path('posteos/', (MostrarPost.as_view()), name='posteos'),

@@ -28,6 +28,9 @@
 </head>
 <body>
 	<div class="wrapper">
+		{% if true %}
+		mensaje
+		{% endif %}
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="green">
@@ -355,9 +358,9 @@
 							<h4 class="text-section">Components</h4>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
+							<a data-toggle="collapse" href="{% url 'login' %}">
 								<i class="fas fa-layer-group"></i>
-								<p>Quienes Somos</p>
+								<p>login</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="base">
@@ -468,7 +471,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#tables">
+							<a data-toggle="collapse" href="{% url 'posteos' %}">
 								<i class="fas fa-table"></i>
 								<p>Publicaciones</p>
 								<span class="caret"></span>
@@ -542,7 +545,6 @@
 					</div>
 					<div class="page-category">
 						{% block body %}
-
 						{% endblock body %}
 						
 					</div>
