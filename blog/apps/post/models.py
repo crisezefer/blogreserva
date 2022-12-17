@@ -19,7 +19,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=40, blank=False, null=False)
     resumen = models.CharField(max_length=40, blank=False, null=False)
     texto = models.TextField(max_length=500, blank=False, null=False)
-    imgaen = models.ImageField(upload_to='post', null=True)
+    imagen = models.ImageField(upload_to='post', null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     publicado = models.BooleanField(default=True)
     fecha_creacion = models.DateField(auto_now_add=True)
