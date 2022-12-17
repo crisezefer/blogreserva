@@ -20,7 +20,16 @@
 
 
     </div>
-
-
+   
+    {% for post in posteos %}
+        <div class="card" style="width: 24rem;">
+            <img class="card-img-top" src="/media/{{post.imagen}}" alt="Imagen">
+            <div class="card-body">
+                <h5 class="card-title mb-2 fw-mediumbold">{{post.titulo}}</h5>
+                <p class="card-text">{{post.resumen}}</p>
+                <a href="#" class="btn btn warning">Leer Post</a>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock body %}

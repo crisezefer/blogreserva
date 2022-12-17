@@ -11,7 +11,7 @@ def crearPost(request):
             return redirect('crear_post')
     else:
         post_form = PostForm()
-    return render(request, 'post/index.html', {'post_form': post_form})
+    return render(request, 'post/crear_post.html', {'post_form': post_form})
 
 class MostrarPost(View):
     template_name = 'post/posteos.html'
