@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/logo_bomberos.ico' %}" type="image/x-icon"/>
+    <title>Registro</title>
+     <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atlantis.min.css' %}">
+</head>
+<body>
+    {% if form.errors %}
+
+        <div class="card text-center mx-auto" style="width: 20rem; align:center" role="alert">
+             <div class="card-body">
+                <h4 class="text-danger"><strong>Error de registro!</strong></h4>
+                <li class="mensaje">{{form.errors.username}}</li>
+                <li class="mensaje">{{form.errors.password2}}</li>
+                <a href="{% url 'registro' %}" class="btn btn-danger">Aceptar</a>
+            </div>
+        </div>
+    {%endif%}
+    <div class="card text-center mx-auto" style="width: 26rem;">
+        <div class="card-body">
+            <h5 class="card-title mb-2 fw-mediumbold">Registro</h5>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

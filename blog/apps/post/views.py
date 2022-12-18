@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Categoria, Post
-from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic import View
-
+from django.urls import reverse_lazy
+from .models import *
+from .forms import PostForm
+# vista para crear posteo
 def crearPost(request):
     if request.method == 'POST':
         post_form = PostForm(request.POST or None, request.FILES or None)
@@ -47,10 +49,11 @@ class MostrarPost(View):
 def leerPost(request, id):
     if request.method=='GET':
         post = Post.objects.get(id=id)
+        comentarios = Comentario.objects.filter(posteo=id)
         context = {
-            'post': post
+            'post': post,
+            'comentarios':comentarios
         }
-
     return render(request, 'post/posteo.html', context)
 
 def userlogin(request):
@@ -58,3 +61,15 @@ def userlogin(request):
     return render(request,'login/login.html',{
             'soylavariablequeenviadesdeview': estoesunbooleano
         })
+
+@login_required
+def comentar_Post(request):
+
+    com = request.POST.get('comentario',None)
+    usu = request.user
+    noti = request.POST.get('id_post', None)
+    post = Post.objects.get(id = noti) 
+    Comentario.objects.create(usuario = usu, posteo = post, texto = com)
+
+    return redirect(reverse_lazy('posteo', kwargs={'id': noti}))
+

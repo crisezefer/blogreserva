@@ -23,7 +23,7 @@
    
     {% for post in posteos %}
         <div class="card" style="width: 24rem;">
-            <img class="card-img-top" src="/media/{{post.imagen}}" alt="Imagen">
+            <img class="card-img-top" src="{{post.imagen.url}}" alt="Imagen">
             <div class="card-body">
                 <h5 class="card-title mb-2 fw-mediumbold">{{post.titulo}}</h5>
                 <p class="card-text">{{post.resumen}}</p>

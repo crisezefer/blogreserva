@@ -13,7 +13,11 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'resumen', 'imagen', 'categoria', 'publicado', 'fecha_creacion', 'usuario')
     list_filter = ('categoria__nombre', 'publicado')
 
-
+class ComentarioAdmin(admin.ModelAdmin):
+    ordering = ('usuario', 'texto', 'posteo', 'fecha')
+    search_fields = ('usuario__nombre', 'texto', 'posteo', 'fecha')
+    list_display = ('usuario', 'texto', 'posteo', 'fecha')
 
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comentario, ComentarioAdmin)

@@ -8,11 +8,12 @@
 	<link rel="icon" href="../static/img/logo-reserva.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="../static/js/plugin/webfont/webfont.min.js"></script>
+	<script src="{% static 'js/plugin/webfont/webfont.min.js' %}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], 
+			urls: ["{% static 'css/fonts.min.css' %} "]},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -20,17 +21,13 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../static/css/atlantis.css">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/atlantis.min.css' %}">
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../assets/css/demo.css">
+	
 </head>
 <body>
 	<div class="wrapper">
-		{% if true %}
-		mensaje
-		{% endif %}
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="green">
@@ -52,7 +49,7 @@
 			<!-- End Logo Header -->
 
 			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="badge-success">
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="green">
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
@@ -296,12 +293,11 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
+									Bienvenido Reserva
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -333,21 +329,12 @@
 						<li class="nav-item active">
 							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
-								<p>Dashboard</p>
+								<p>Home</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
-									<li>
-										<a href="../demo1/index.html">
-											<span class="sub-item">Dashboard 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="../demo2/index.html">
-											<span class="sub-item">Dashboard 2</span>
-										</a>
-									</li>
+					
 								</ul>
 							</div>
 						</li>
@@ -360,7 +347,7 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="{% url 'login' %}">
 								<i class="fas fa-layer-group"></i>
-								<p>login</p>
+								<p>Quienes somos</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="base">
@@ -421,59 +408,36 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
 								<i class="fas fa-th-list"></i>
-								<p>Proyectos</p>
+								<p>Posteos</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="sidebar-style-1.html">
-											<span class="sub-item">Sidebar Style 1</span>
+											<span class="sub-item">Publicar</span>
 										</a>
 									</li>
 									<li>
 										<a href="overlay-sidebar.html">
-											<span class="sub-item">Overlay Sidebar</span>
+											<span class="sub-item">Leer Post</span>
 										</a>
 									</li>
-									<li>
-										<a href="compact-sidebar.html">
-											<span class="sub-item">Compact Sidebar</span>
-										</a>
-									</li>
-									<li>
-										<a href="static-sidebar.html">
-											<span class="sub-item">Static Sidebar</span>
-										</a>
-									</li>
-									<li>
-										<a href="icon-menu.html">
-											<span class="sub-item">Icon Menu</span>
-										</a>
-									</li>
+									<
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
-								<p>Servicios</p>
+								<p>Proyecto</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Basic Form</span>
-										</a>
-									</li>
-								</ul>
-							</div>
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="{% url 'posteos' %}">
 								<i class="fas fa-table"></i>
-								<p>Publicaciones</p>
+								<p>Objetivos</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="tables">
@@ -494,23 +458,15 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#maps">
 								<i class="fas fa-map-marker-alt"></i>
-								<p>Areas de Estudio</p>
+								<p>Mapa</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="maps">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="maps/jqvmap.html">
-											<span class="sub-item">JQVMap</span>
-										</a>
-									</li>
+								<ul class="nav nav-collapse">									
 								</ul>
 							</div>
 						</li>
 						
-						</li>
-						<li class="mx-4 mt-2">
-							<a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a> 
 						</li>
 					</ul>
 				</div>
@@ -522,25 +478,13 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Dashboard</h4>
+						<h4 class="page-title">Senderos, Reserva Educativa Experimental y Granja Autosustentable</h4>
+						<section  style={{
+							background-image: url("post.imagen.url");
+							   }}>
+							   <h5> inicio </h5>
+						</section>
 						<ul class="breadcrumbs">
-							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
-								</a>
-							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Pages</a>
-							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Starter Page</a>
-							</li>
 						</ul>
 					</div>
 					<div class="page-category">
@@ -577,44 +521,19 @@
 				</div>
 			</footer>
 		</div>
-		
-	</div>
-	<!--   Core JS Files   -->
-	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
+		<!--   Core JS Files   -->
+	<script src="{% static 'js/core/jquery.3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/core/popper.min.js' %}"></script>
+	<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
 
 	<!-- jQuery UI -->
-	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="{% static 'js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js' %}"></script>
 
 	<!-- jQuery Scrollbar -->
-	<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-
-	<!-- Chart JS -->
-	<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-	<!-- jQuery Sparkline -->
-	<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-	<!-- Chart Circle -->
-	<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
-	<!-- Datatables -->
-	<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-	<!-- Bootstrap Notify -->
-	<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-	<!-- jQuery Vector Maps -->
-	<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-	<!-- Sweet Alert -->
-	<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<script src="{% static 'js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
 
 	<!-- Atlantis JS -->
-	<script src="../assets/js/atlantis.min.js"></script>
+	<script src="{% static 'js/atlantis.min.js' %}"></script>
 </body>
 </html>

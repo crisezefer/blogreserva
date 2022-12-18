@@ -31,4 +31,12 @@ class Meta:
 def __str__(self):
     return str(self.titulo)
     
+class Comentario(models.Model):
+	usuario = models.ForeignKey(User, on_delete = models.CASCADE)
+	texto = models.TextField(max_length = 1000)
+	posteo = models.ForeignKey(Post, on_delete = models.CASCADE)
+	fecha = models.DateTimeField(auto_now_add=True)
 
+	def __str__(self):
+		return str(self.texto)
+        
