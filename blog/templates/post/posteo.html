@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+{%load social_share%}
 
 {% block body %}
 <img src="{{post.imagen.url}}" width="500" height="500">
@@ -11,5 +12,18 @@
 <p>{{post.texto|linebreaksbr}}</p>
 
 
+<br><br>
+<br>
+<form method="POST" action="{% url 'comentar' %}">
+    {% csrf_token %}
+    <textarea name="comentario" maxlength="1500"> </textarea>
+    <input type="text" name="id_post" value="{{post.id}}" hidden=""> 
+    <input type="submit" value="GUARDAR">
+</form>
+<br><br><br>
+<h3>COMENTARIOS</h3>
+
 <a href="{% url 'posteos' %}">VOLVER</a>
+{% post_to_twitter object_or_url "Post to Twitter"%}
+{% post_to_facebook object_or_url "Post to Facebook"%}
 {% endblock body %}

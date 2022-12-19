@@ -56,11 +56,7 @@ def leerPost(request, id):
         }
     return render(request, 'post/posteo.html', context)
 
-def userlogin(request):
-    estoesunbooleano=True
-    return render(request,'login/login.html',{
-            'soylavariablequeenviadesdeview': estoesunbooleano
-        })
+
 
 @login_required
 def comentar_Post(request):
