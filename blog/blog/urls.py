@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 urlpatterns = [
-    path('home/', Login.as_view(), name= 'home'),
+    path('', home_base, name= 'home'),
     path('accounts/login/', Login.as_view(), name= 'login'),
     path('logout/', login_required(logoutUsuario), name='logout'),
     path('registro/', RegistroUsuario.as_view(), name='registro'),

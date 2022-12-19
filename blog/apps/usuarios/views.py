@@ -45,4 +45,7 @@ class Login(FormView):
 
 def logoutUsuario(request):
     logout(request)
-    return HttpResponseRedirect('/accounts/login')
+    return HttpResponseRedirect('/login/login')
+
+def home_base(request):
+    return render(request, 'login/home.html')
