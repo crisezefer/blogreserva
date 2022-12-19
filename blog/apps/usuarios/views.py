@@ -49,3 +49,12 @@ def logoutUsuario(request):
 
 def home_base(request):
     return render(request, 'login/home.html')
+
+def objetivos(request):
+    return render(request, 'objetivos.html')
+
+def proyectos(request):
+    return render(request, 'proyectos.html')
+    
+def quienes(request):
+    return render(request, 'quienes.html')

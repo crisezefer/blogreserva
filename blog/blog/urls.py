@@ -30,6 +30,9 @@ urlpatterns = [
     path('crear_post/', crearPost, name='crear_post'),
     path('posteos/',(MostrarPost.as_view()), name='posteos'),
     path('comentar/', comentar_Post, name='comentar'),
+    path('quienes/', quienes, name= 'quienes'),
+    path('proyectos/', proyectos, name= 'proyectos'),
+    path('objetivos/', objetivos, name= 'objetivos'),
     re_path('leer_post/(?P<id>\d+)/$', leerPost, name='posteo'),
 
     
