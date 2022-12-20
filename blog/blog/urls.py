@@ -23,8 +23,8 @@ from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, 
 
 urlpatterns = [
     path('', home_base, name= 'home'),
-    path('usuario/login/', Login.as_view(), name= 'login'),
-    path('usuario/logout.html', login_required(logoutUsuario), name='logout'),
+    path('accounts/login/', Login.as_view(), name= 'login'),
+    path('logout/', login_required(logoutUsuario), name='logout'),
     path('registro/', RegistroUsuario.as_view(), name='registro'),
     path('admin/', admin.site.urls),
     path('crear_post/', crearPost, name='crear_post'),

@@ -9,7 +9,6 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout
 from .forms import *
-from django.views import generic
 
 # Create your views here.
 
@@ -17,17 +16,16 @@ from django.views import generic
 # Registrar un usuario
 
 class RegistroUsuario(CreateView):
-    success_url = reverse_lazy('login')
     model = User
-    template_name = 'Login/registrar.html'
+    template_name = 'usuario/registrar.html'
     form_class = ResgistroForm
-    
+    success_url = reverse_lazy('login')
 
 
 # Login 
 
 class Login(FormView):
-    template_name = 'login/login.html'
+    template_name = 'usuario/login.html'
     form_class = FormularioLogin
 
     success_url = reverse_lazy('posteos')
@@ -47,7 +45,7 @@ class Login(FormView):
 
 def logoutUsuario(request):
     logout(request)
-    return HttpResponseRedirect('/usuario/login')
+    return HttpResponseRedirect('/login/login')
 
 def home_base(request):
     return render(request, 'login/home.html')

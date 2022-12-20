@@ -1,6 +1,4 @@
-{% extends 'base.html'%}
 {% load static %}
-{% block body %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,14 +22,14 @@
         <div class="card text-center mx-auto" style="width: 20rem; align:center" role="alert">
              <div class="card-body">
                 <h4 class="text-danger"><strong>Error de login!</strong></h4>
-                <p class="mensaje">Usuario/contraseña incorrecto</p>
-                <p class="mensaje">Cuidado con mayúsculas/minúsculas</p>
+                <p class="mensaje">Usuario o contraseña incorrecto</p>
+                <p class="mensaje">Ambos campos son sensibles a mayúsculas/minúsculas</p>
                 <a href="{% url 'login' %}" class="btn btn-danger">Aceptar</a>
             </div>
         </div>
     {%endif%}
     <div class=" card text-center mx-auto" style="width: 22rem;">
-        <!--<img class="card-img-top" src="{% static 'img/login.svg' %}" alt="Card image cap">-->
+        <img class="card-img-top" src="{% static 'img/login.svg' %}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title mb-2 fw-mediumbold">Login</h5>
             <form method="POST">
@@ -60,5 +58,4 @@
         </div>
     </div>
 </body>
-{% endblock body %}
 </html>
