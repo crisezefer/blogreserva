@@ -52,6 +52,8 @@ def logoutUsuario(request):
 def home_base(request):
     return render(request, 'login/home.html')
 
+<<<<<<< HEAD
+=======
 def objetivos(request):
     return render(request, 'objetivos.html')
 
@@ -60,3 +62,4 @@ def proyectos(request):
     
 def quienes(request):
     return render(request, 'quienes.html')
+>>>>>>> 2c799a04e0446e6469ebe60dab0517fce805f9d4
