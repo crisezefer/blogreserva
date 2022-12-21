@@ -11,7 +11,7 @@
 
 <p>{{post.texto|linebreaksbr}}</p>
 
-
+<h3>COMENTARIOS</h3>
 <br><br>
 <br>
 <form method="POST" action="{% url 'comentar' %}">
@@ -21,7 +21,6 @@
     <input type="submit" value="GUARDAR">
 </form>
 <br><br><br>
-<h3>COMENTARIOS</h3>
 
 <a href="{% url 'posteos' %}">VOLVER</a>
 {% post_to_twitter object_or_url "Post to Twitter"%}
