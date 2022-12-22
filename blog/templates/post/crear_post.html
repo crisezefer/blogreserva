@@ -6,7 +6,7 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class=" card text-center mx-auto">
-                <h5 class="card-header"><p class="text-success">Posteo</p></h5>
+                <h5 class="card-header"><p class="btn btn-outline-success">Posteo</p></h5>
                 <div class="card-body">
                     {{post_form.as_p}}
                     <button type="submit" class="btn btn-success btn-round btm-normal">Guardar</button>
