@@ -6,12 +6,11 @@
 <img src="{{post.imagen.url}}" width="500" height="500">
 <h1>{{post.titulo}}</h1>
 <p>FECHA: {{post.fecha_creacion}}</p>
-<p>CATEGORIA: {{post.categorias}}</p>
+<p>CATEGORIA: {{post.categoria}}</p>
 <h4>{{post.resumen}}</h4>
 
 <p>{{post.texto|linebreaksbr}}</p>
 
-<h3>COMENTARIOS</h3>
 <br><br>
 <br>
 <form method="POST" action="{% url 'comentar' %}">
@@ -21,6 +20,12 @@
     <input type="submit" value="GUARDAR">
 </form>
 <br><br><br>
+<h3>COMENTARIOS</h3>
+{% for com in comentarios %}
+<strong>FECHA:{{com.fecha}}</strong><br>
+<strong>USUARIO:{{com.usuario}}</strong><br>
+<p>{{com.texto}}</p>
+{% endfor %}
 
 <a href="{% url 'posteos' %}">VOLVER</a>
 {% post_to_twitter object_or_url "Post to Twitter"%}

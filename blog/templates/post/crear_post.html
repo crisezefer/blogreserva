@@ -2,15 +2,15 @@
 {% load static %}
 {% block body %}
 
-    <div>
+    <div  class="border border-success p-2 mb-2">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="card">
-                <h5 class="card-header">Posteo</h5>
+            <div class=" card text-center mx-auto">
+                <h5 class="card-header"><p class="text-success">Posteo</p></h5>
                 <div class="card-body">
                     {{post_form.as_p}}
                     <button type="submit" class="btn btn-success btn-round btm-normal">Guardar</button>
-                    <a  class="btn btn-dark btn-round btm-normal">Cancelar</a>
+                    <a  class="btn btn-success btn-round btn-danger">Cancelar</a>
                 </div>            
 
             </div>

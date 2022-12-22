@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import *
+
 # Register your models here.
+
 class CategoriaAdmin(admin.ModelAdmin):
     ordering = ('id', 'nombre', 'activado', 'fecha_creacion')
     search_fields = ('id', 'nombre', 'activado', 'fecha_creacion')

@@ -13,7 +13,7 @@
              {% endfor %}
             </select>
             <input type="date" name="fecha" placeholder="Fecha">
-            <button type="submit" class="btn btn-success btn-round btm-normal" >Filtrar</button>
+            <button type="submit" class="text-center btn btn-success btn-round btm-normal" >Filtrar</button>
         
         
         </form>
@@ -22,14 +22,14 @@
     </div>
    
     {% for post in posteos %}
-        <div class="card" style="width: 24rem;">
+    <div class=" card text-center mx-auto" style="width: 50rem;">
             <img class="card-img-top" src="{{post.imagen.url}}" alt="Imagen">
             <div class="card-body">
                 <h5 class="card-title mb-2 fw-mediumbold">{{post.titulo}}</h5>
                 <p class="card-text">{{post.resumen}}</p>
                 <a href="{% url 'posteo' post.id %}" class="btn btn warning">Leer Post</a>
             </div>
-        </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock body %}
