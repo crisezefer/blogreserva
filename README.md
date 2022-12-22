@@ -33,7 +33,8 @@ Herramientas que utilizamos en el proyecto
     
  Participantes del proyecto:
     Sanz, Gerardo fabian
-    
+    Sanchez, Irina
+    Ferrero, Cristian Ezequiel
     
  Links de interés:
     Informatorio - https://empleo.chaco.gob.ar/informatorio#/  
